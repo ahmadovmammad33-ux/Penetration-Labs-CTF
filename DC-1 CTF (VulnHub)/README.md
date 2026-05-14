@@ -30,10 +30,10 @@ robots.txt və CHANGELOG.txt kimi informasiya sızdıra biləcək fayllar.
 1.4 Zəiflik Araşdırması (Research)
 OpenSSH 6.0p1 versiyası üçün apardığım araşdırma nəticəsində bu versiyanın CVE-2018-15473 (User Enumeration) zəifliyinə qarşı həssas ola biləcəyini qeyd etdim. Bu, sistemdəki istifadəçi adlarını tapmaq üçün bir yol ola bilər.
 
-![Screenshot 1](screenshot<img width="859" height="416" alt="4" src="https://github.com/user-attachments/assets/b4931189-ff6e-40bd-baff-4198a396b508" />
-<img width="1366" height="596" alt="3" src="https://github.com/user-attachments/assets/5242147e-56d5-4d5d-952d-17fe821e94d2" />
+![Screenshot 1](screenshot<img width="647" height="151" alt="1" src="https://github.com/user-attachments/assets/6a61fc8a-08f0-49ea-a8a2-682d0b1d83ef" />
 <img width="866" height="318" alt="2" src="https://github.com/user-attachments/assets/7db1d48b-6d39-4142-bf34-88268591ae35" />
-<img width="647" height="151" alt="1" src="https://github.com/user-attachments/assets/6a61fc8a-08f0-49ea-a8a2-682d0b1d83ef" />
+<img width="1366" height="596" alt="3" src="https://github.com/user-attachments/assets/5242147e-56d5-4d5d-952d-17fe821e94d2" />
+<img width="859" height="416" alt="4" src="https://github.com/user-attachments/assets/b4931189-ff6e-40bd-baff-4198a396b508" />
 s/screenshot1.jpg)
 
 ## Zəiflik Analizi
