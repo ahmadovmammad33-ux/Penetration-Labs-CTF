@@ -2,9 +2,39 @@
 
 ## Əvvəlcə Məlumat
 
-[Buraya CTF maşını haqqında ilkin məlumatlarınızı yazın. Məsələn: Maşının adı, versiyası, IP adresi, etc.]
+Mərhələ 1: İnformasiya Toplanması və Şəbəkə Analizi (Reconnaissance)
+Hücumun ilk mərhələsində hədəf maşını müəyyən etmək və onun üzərindəki xidmətləri analiz etmək üçün sistemli bir yol izlədim.
 
-![Screenshot 1](screenshots/screenshot1.jpg)
+1.1 Hədəf IP-nin Müəyyən Edilməsi
+Şəbəkədəki canlı hostları tapmaq üçün netdiscover alətindən istifadə etdim. Skan nəticəsində hədəf maşının 192.168.100.85 IP ünvanında olduğunu müəyyən etdim.
+
+1.2 Port Skanlama və Xidmət Analizi (Nmap)
+Hədəf üzərindəki açıq portları və servisləri müəyyən etmək üçün nmap ilə dərin analiz apardım:
+# Servis versiyaları və OS təyini üçün
+{nmap -sS -sV -O 192.168.100.85}
+Nəticələr:
+*Port 22: OpenSSH 6.0p1 (Debian)
+*Port 80: Apache httpd 2.2.22 (Drupal CMS işləyir)
+*Port 111: rpcbind
+Bundan əlavə, SSH servisinin hansı alqoritmləri dəstəklədiyini və potensial zəifliklərini görmək üçün xüsusi Nmap script-ini işə saldım:
+{nmap --script ssh2-enum-algos -p22 192.168.100.85}
+
+1.3 Web İnterfeys və Directory Enumeration
+80-ci portu brauzerdə açdıqda bizi standart bir Drupal Site giriş paneli qarşıladı.
+Sistemin arxa tərəfindəki gizli qovluqları və faylları aşkar etmək üçün gobuster aləti ilə common.txt wordlist-indən istifadə edərək skan apardım:
+{gobuster dir -u http://192.168.100.85 -w /usr/share/wordlists/dirb/common.txt}
+Tapıntılar:
+/includes, /misc, /modules, /themes (Standart Drupal qovluqları)
+robots.txt və CHANGELOG.txt kimi informasiya sızdıra biləcək fayllar.
+
+1.4 Zəiflik Araşdırması (Research)
+OpenSSH 6.0p1 versiyası üçün apardığım araşdırma nəticəsində bu versiyanın CVE-2018-15473 (User Enumeration) zəifliyinə qarşı həssas ola biləcəyini qeyd etdim. Bu, sistemdəki istifadəçi adlarını tapmaq üçün bir yol ola bilər.
+
+![Screenshot 1](screenshot<img width="859" height="416" alt="4" src="https://github.com/user-attachments/assets/b4931189-ff6e-40bd-baff-4198a396b508" />
+<img width="1366" height="596" alt="3" src="https://github.com/user-attachments/assets/5242147e-56d5-4d5d-952d-17fe821e94d2" />
+<img width="866" height="318" alt="2" src="https://github.com/user-attachments/assets/7db1d48b-6d39-4142-bf34-88268591ae35" />
+<img width="647" height="151" alt="1" src="https://github.com/user-attachments/assets/6a61fc8a-08f0-49ea-a8a2-682d0b1d83ef" />
+s/screenshot1.jpg)
 
 ## Zəiflik Analizi
 
