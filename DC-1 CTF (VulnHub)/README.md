@@ -41,10 +41,11 @@ OpenSSH 6.0p1 versiyası üçün apardığım araşdırma nəticəsində bu vers
 <img width="866" height="318" alt="2" src="https://github.com/user-attachments/assets/7db1d48b-6d39-4142-bf34-88268591ae35" />
 <img width="1366" height="596" alt="3" src="https://github.com/user-attachments/assets/5242147e-56d5-4d5d-952d-17fe821e94d2" />
 <img width="859" height="416" alt="4" src="https://github.com/user-attachments/assets/b4931189-ff6e-40bd-baff-4198a396b508" />
-<img width="866" height="318" alt="5" src="https://github.com/user-attachments/assets/[IMAGE5-SSH-ALGORITHMS]" />
-<img width="1366" height="596" alt="6" src="https://github.com/user-attachments/assets/[IMAGE6-GOBUSTER-OUTPUT]" />
-<img width="859" height="416" alt="7" src="https://github.com/user-attachments/assets/[IMAGE7-GOBUSTER-RESULTS]" />
-<img width="647" height="151" alt="8" src="https://github.com/user-attachments/assets/[IMAGE8-NMAP-MAC]" />
+
+![Image 5](https://user-images.githubusercontent.com/image1.png)
+![Image 6](https://user-images.githubusercontent.com/image2.png)
+![Image 7](https://user-images.githubusercontent.com/image3.png)
+![Image 8](https://user-images.githubusercontent.com/image4.png)
 
 
 ## Zəiflik Analizi
